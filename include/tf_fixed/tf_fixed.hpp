@@ -4,6 +4,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2/LinearMath/Quaternion.h>
+#include <tf2/LinearMath/Matrix3x3.h>
 #include <geometry_msgs/msg/transform_stamped.hpp>
 
 namespace tf_fixed
@@ -23,6 +24,7 @@ protected:
     rcl_interfaces::msg::SetParametersResult on_set_parameters_callback(const std::vector<rclcpp::Parameter> & parameters);
     void reset_timer_period(const int64_t &new_period_ms);
     void refresh_msg();
+    void check_valid_double_parameter(const rclcpp::Parameter &param, rcl_interfaces::msg::SetParametersResult &result);
 
 private:
     std::shared_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
