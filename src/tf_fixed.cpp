@@ -213,10 +213,10 @@ namespace tf_fixed
       roll_deg = this->get_parameter("rotation.euler_degrees.roll").as_double();
       pitch_deg = this->get_parameter("rotation.euler_degrees.pitch").as_double();
       yaw_deg = this->get_parameter("rotation.euler_degrees.yaw").as_double();
-      q.setRPY(roll_rad, pitch_rad, yaw_rad);
       roll_rad = roll_deg * M_PI / 180.0;
       pitch_rad = pitch_deg * M_PI / 180.0;
       yaw_rad = yaw_deg * M_PI / 180.0;
+      q.setRPY(roll_rad, pitch_rad, yaw_rad);
 
       this->set_parameters_atomically({
         rclcpp::Parameter("rotation.quaternion.x", q.x()),
