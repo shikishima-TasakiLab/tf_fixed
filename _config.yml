@@ -1,10 +1,5 @@
+remote_theme: pages-themes/primer@v0.6.0
+
 plugins:
   - jekyll-sitemap
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      mermaid: true
+  - jekyll-remote-theme
