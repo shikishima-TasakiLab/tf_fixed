@@ -1,3 +1,10 @@
 plugins:
   - jekyll-sitemap
-  - jekyll-mermaid
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      mermaid: true
